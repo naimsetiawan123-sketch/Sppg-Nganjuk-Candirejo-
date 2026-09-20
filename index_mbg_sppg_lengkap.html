@@ -1,254 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0d2a63">
-<title>Panduan Gizi Seimbang - SPPG Nganjuk Loceret Candirejo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menu MBG - SPPG</title>
 <style>
-:root{
- --navy:#0d1730;--blue:#1d65d8;--blue2:#4b8cf7;--sky:#edf6ff;
- --text:#26364d;--muted:#73839a;--line:#dbe5ef;--white:#fff;
- --yellow:#ffd229;--red:#ed2430;--orange:#ff7b00;--green:#08ad7b;
- --shadow:0 8px 28px rgba(22,49,82,.10)
-}
-*{box-sizing:border-box}
-body{margin:0;background:#f3f7fb;color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif}
-button,input,textarea{font:inherit}
-.container{max-width:820px;margin:auto}
-.page{padding:18px 14px 45px}
-.hero{text-align:center;padding:15px 10px 8px}
-.logo{
- width:82px;height:82px;margin:0 auto 10px;border-radius:50%;background:#fff;
- border:5px solid #edf2f5;display:grid;place-items:center;box-shadow:0 4px 16px #7890a333;
- font-weight:900;color:#214a9b;font-size:11px
-}
-.gov{font-weight:800;letter-spacing:2px;color:#24458a;font-size:18px}
-.govsub{color:#2464db;font-weight:700;margin-top:4px}
-.notice{
- background:#fff8d9;border:2px solid #f2c51c;border-radius:20px;padding:12px 14px;
- margin:12px auto 18px;text-align:center;color:#74480e;font-size:14px;line-height:1.45
-}
-.titleCard{
- background:var(--navy);color:white;border-radius:24px;padding:24px 20px;margin-bottom:18px;
- box-shadow:var(--shadow);text-align:center
-}
-.badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
-.badge{padding:7px 13px;border-radius:999px;font-size:13px;font-weight:800;background:var(--yellow);color:#15213c}
-.badge.blue{background:#2874df;color:#fff}
-.titleCard h1{font-size:25px;line-height:1.35;color:#ffe000;margin:10px auto 8px;max-width:680px}
-.date{color:#dce5f4;font-size:15px}.zone{
- display:inline-block;margin-top:10px;padding:8px 15px;border-radius:999px;
- border:1px solid #2860cf;background:#11275d;color:#cfe0ff
-}
-.section{
- background:white;border:1px solid var(--line);border-radius:23px;padding:18px 16px;
- margin-bottom:18px;box-shadow:var(--shadow)
-}
-.section h2{font-size:20px;margin:0 0 15px;display:flex;align-items:center;gap:10px}
-.divider{height:1px;background:var(--line);margin-bottom:14px}
-.rows{display:grid;gap:10px}
-.row{
- border:1px solid var(--line);border-radius:15px;padding:13px 15px;display:flex;
- justify-content:space-between;align-items:center;gap:15px;background:#fff
-}
-.row span{color:#52657d}.row b{background:#f0f4f8;border-radius:9px;padding:7px 11px;white-space:nowrap}
-.row.blue{background:#eef7ff;border-color:#c8e0fa}.row.blue b{background:#dceaff;color:#234179}
-.flow{display:flex;align-items:center;justify-content:space-around;background:#e9eef5;border-radius:15px;padding:11px;margin:13px 0}
-.flow span{background:white;padding:6px 12px;border-radius:9px;font-size:13px}.flow i{font-style:normal;font-weight:800}
-.energy-total{text-align:center;background:#fffaf0;border:1px solid #f0e4c7;border-radius:17px;padding:13px}
-.energy-total small{display:block;color:#96500c;font-weight:800}.energy-total strong{font-size:24px;color:#45240f}
-.safe{border:2px solid #ffc5c9}
-.safe .limit{text-align:center;border:1px solid #f0d3d5;border-radius:17px;padding:16px;margin-top:10px}
-.limit small{display:block;color:#b51d24;font-weight:900;letter-spacing:1px}.limit strong{display:block;color:#d71920;font-size:25px;margin-top:8px}
-.safe-row{display:flex;justify-content:space-between;padding:12px 14px;border-radius:13px;background:#fff9de;margin-top:10px}
-.warning{background:#ffb800;color:#3b2900;text-align:center;border-radius:13px;padding:11px;font-weight:800;margin-top:10px}
-.warning.red{background:#ff7400;color:white}
-.label{text-align:center;margin:-4px auto 12px;font-weight:800;letter-spacing:.5px;color:#7e5b00;background:#fff3c4;border:1px solid #f1d36c;padding:7px 17px;border-radius:999px;width:max-content;max-width:100%}
-.energy-box{background:linear-gradient(135deg,#00b889,#19a98a);color:#fff;border-radius:20px;padding:18px;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.energy-box small{font-weight:800;letter-spacing:1px}.energy-box strong{font-size:39px}.energy-box em{font-style:normal;font-size:16px;font-weight:800}
-.saved{background:#ffffff2b;border:1px solid #ffffff55;border-radius:15px;padding:15px;text-align:center;font-weight:800}
-.nutrients{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.nutrient{border:2px solid #dce7ef;border-radius:18px;padding:15px;min-height:115px}
-.nutrient h3{margin:0 0 8px;font-size:13px;letter-spacing:.5px}.nutrient strong{font-size:27px;color:#4a2415}.nutrient span{font-size:14px}
-.nutrient.carbs{border-color:#ffe37a;background:#fffdf2}.nutrient.protein{border-color:#ffc4c9;background:#fff8f8}
-.nutrient.fat{border-color:#8eeaf1;background:#f5fdff}.nutrient.fiber{border-color:#8ee7c5;background:#f4fff9}
-.endnote{text-align:center;background:#f0f3f8;border-radius:15px;padding:12px;margin-top:12px;color:#42536b}
-.portions{background:white;border:1px solid var(--line);border-radius:22px;padding:15px;box-shadow:var(--shadow);margin-bottom:18px}
-.portion-tabs{display:flex;gap:8px;overflow:auto;padding-bottom:3px}
-.portion-tabs button{border:0;background:#edf2f7;color:#63758b;padding:11px 15px;border-radius:999px;white-space:nowrap;font-weight:800}
-.portion-tabs button.active{background:#1d65d8;color:#fff}
-.poster{margin-top:13px;border-radius:18px;background:#eef6ff;padding:18px;text-align:center;border:1px solid #cfe3f7}
-.poster h3{margin:0 0 8px}.poster p{margin:5px;color:#687b91;font-size:13px}
-.report{background:linear-gradient(120deg,#ee061a,#f00045 50%,#f07b00);color:white;border-radius:25px;overflow:hidden;margin-top:20px}
-.report-head{padding:24px 20px}.report-pill{display:inline-block;background:#ffffff33;border-radius:999px;padding:7px 13px;font-weight:800;font-size:12px}
-.report h2{margin:10px 0;font-size:24px}.report p{line-height:1.5;margin:0}
-.report-body{background:#fff;color:var(--text);padding:22px 20px}
-.contact-title{font-weight:800;color:#5b6d84;margin-bottom:12px}.contacts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.contact{border:1px dashed #d9e2eb;background:#f7f9fb;border-radius:16px;padding:14px 8px;text-align:center;color:#64778f}
-.contact b{display:block;margin-top:5px}.contact small{color:#9baabd}
-.topics{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.topic{border:0;background:#eef2f7;padding:10px 13px;border-radius:999px;color:#42546c;font-weight:700}.topic.active{background:#ed1740;color:white}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field label{display:block;font-weight:700;font-size:13px;margin:0 0 7px}.field input,.field textarea{width:100%;border:1px solid #d2dce6;border-radius:14px;padding:13px;outline:0}.field textarea{min-height:110px;resize:vertical}.full{grid-column:1/-1}
-.actions{display:flex;gap:10px;margin-top:15px}.actions button{border:0;border-radius:14px;padding:13px 18px;font-weight:800;cursor:pointer}.wa{background:#08a56f;color:#fff;flex:1}.send{background:#edf1f6;color:#42546c}
-.qr{margin-top:18px;background:#0d1730;color:white;border-radius:18px;padding:17px;text-align:center;font-size:18px;font-weight:800}
-.footer{text-align:center;color:#8292a5;font-size:12px;padding:18px 0}
-.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#14243c;color:white;padding:12px 18px;border-radius:999px;display:none;z-index:50}
-@media(max-width:620px){
- .titleCard h1{font-size:22px}.contacts{grid-template-columns:1fr 1fr}
- .form-grid{grid-template-columns:1fr}.full{grid-column:auto}
- .actions{flex-direction:column}.energy-box{align-items:flex-start;flex-direction:column}.saved{width:100%}
-}
-@media(max-width:430px){.page{padding:10px 9px 35px}.section{padding:15px 12px}.nutrients{gap:8px}.nutrient{padding:12px}.nutrient strong{font-size:23px}.flow span{padding:5px 8px;font-size:11px}}
+:root{--navy:#111a2f;--blue:#1769e0;--yellow:#ffd21a;--green:#08ae80;--red:#ed173d;--orange:#ff7900;--bg:#f3f7fb;--line:#dce6ef;--text:#26364a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,sans-serif;color:var(--text)}
+.wrap{max-width:760px;margin:auto;background:#fff;min-height:100vh;padding:20px 26px 35px}
+.center{text-align:center}.logo{width:82px;height:82px;border-radius:50%;object-fit:cover;border:5px solid white;box-shadow:0 2px 15px #56708055}
+.instansi{color:#23478f;font-size:20px;font-weight:800;letter-spacing:1.5px;margin-top:9px}.negara{color:#2864d2;font-weight:700;margin-top:4px}
+.balance{margin:20px auto 10px;background:#fff5c9;border:3px solid #ffc928;border-radius:25px;padding:12px;font-size:20px;font-weight:800;color:#773b09}
+.alert{background:#fffdf1;border:1px solid #efd16a;border-radius:16px;padding:12px;text-align:center;font-size:13px;color:#71430c}
+.hero{background:var(--navy);color:white;border-radius:24px;padding:21px 18px;margin:20px 0;text-align:center}.badges{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}.badge{background:var(--yellow);color:#111;border-radius:20px;padding:7px 13px;font-size:12px;font-weight:800}.badge.blue{background:#2877df;color:white}
+.hero h1{color:#ffe00a;font-size:25px;line-height:1.3;margin:10px 0}.hero .date{color:#c9d2e2;font-size:14px}.scan{display:inline-block;background:#0c234f;border:1px solid #2450b9;border-radius:20px;padding:8px 13px;margin-top:10px;font-size:12px}
+.section{background:#fff;border:2px solid var(--line);border-radius:22px;padding:17px;margin:18px 0;box-shadow:0 8px 28px #23405b18}.section h2{font-size:18px;margin:0 0 12px;padding-bottom:12px;border-bottom:2px solid var(--line)}
+.row{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:14px;padding:12px;margin:9px 0;font-size:14px}.row.blue{background:#f0f8ff;border-color:#c8def5}.value{background:#f0f4f8;border-radius:8px;padding:6px 10px;font-weight:800;white-space:nowrap}
+.flow{display:flex;justify-content:space-between;align-items:center;background:#edf1f6;border-radius:14px;padding:10px;font-size:12px}.flow b{background:white;border-radius:7px;padding:6px 9px;font-weight:500}
+.energy{text-align:center;background:#fff9eb;border:1px solid #f0dfb1;border-radius:15px;padding:12px;margin-top:13px}.energy small{display:block;color:#8b4d0c;font-weight:800}.energy strong{font-size:22px;color:#3b2412}
+.security{border-color:#ffc9ce;background:#fffafa}.security h2{color:#591b1e;border-color:#f1c4c8}.safe{text-align:center;border:1px solid #efd4d5;border-radius:15px;padding:15px}.safe small{color:#ba1d27;font-weight:800;letter-spacing:1px}.safe strong{display:block;color:#df1e28;font-size:27px;margin-top:7px}.safe-row{display:flex;justify-content:space-between;background:#fffbea;border:1px solid #efd77e;border-radius:12px;padding:11px;margin-top:10px;font-size:13px}.warn{background:#ffbd08;border-radius:13px;text-align:center;padding:12px;margin-top:10px;font-weight:800}.warn.red{background:#ff7600;color:white}
+.nutri-title{text-align:center;background:#fff5ca;border:1px solid #f0d14c;border-radius:30px;padding:8px 16px;width:max-content;max-width:100%;margin:25px auto 10px;font-weight:800;color:#5d3515}
+.energy-big{background:linear-gradient(135deg,#05a879,#0bbf91);color:#fff;border-radius:19px;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px}.energy-big small{font-size:12px;font-weight:800;letter-spacing:1px}.energy-big strong{display:block;font-size:36px;margin-top:4px}.saved{background:#ffffff22;border:1px solid #ffffff55;border-radius:14px;padding:13px;text-align:center;font-weight:800;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}.box{border:2px solid var(--line);border-radius:18px;padding:14px;min-height:100px}.box h3{font-size:13px;margin:0}.box strong{font-size:28px;display:block;margin-top:9px}.yellow{background:#fffdf3;border-color:#ffe27c}.pink{background:#fff7f8;border-color:#ffc6cc}.cyan{background:#f4fdff;border-color:#a5ecf3}.mint{background:#f5fff9;border-color:#a7ebcc}.end{text-align:center;background:#f0f3f7;border-radius:13px;padding:11px;margin-top:12px;font-size:13px}
+.portion-title{text-align:center;color:#8b9aad;font-size:13px;letter-spacing:1px;font-weight:800;margin:25px 0 10px}.portions{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.portion{border:0;background:#edf2f7;border-radius:13px;padding:10px 4px;font-size:11px;font-weight:700;color:#33465b}.portion.active{background:#2069e6;color:#fff}
+.photo{min-height:220px;background:#edf5fa;border-radius:19px;margin-top:15px;display:grid;place-items:center;overflow:hidden}.photo img{width:100%;height:100%;max-height:330px;object-fit:cover}.placeholder{text-align:center;color:#8ca0b0;padding:60px 15px}
+.contact{border:1px solid #ff9b18;border-radius:23px;overflow:hidden;margin-top:24px}.contact-top{background:linear-gradient(105deg,#ed0730,#f20a45,#ef7d00);color:white;padding:20px 22px}.pill{background:#ffffff30;border-radius:20px;padding:7px 12px;font-size:12px;font-weight:800}.contact-top h2{font-size:22px;margin:10px 0}.contact-top p{font-size:14px;line-height:1.5;margin:0}.contact-body{padding:19px 22px}.contact-body h3{font-size:15px;color:#60738a;margin:0 0 12px}.social{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.social a{background:#f2f6fa;border:1px dashed #d4e0ea;border-radius:16px;padding:12px 5px;text-align:center;color:#62768a;font-size:11px;text-decoration:none}.social b{display:block;margin-top:5px}.topics{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.topic{border:0;background:#eef2f7;border-radius:20px;padding:10px 12px;font-size:12px;font-weight:700;color:#3c5065}.topic.active{background:#ed1747;color:white}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-top:10px}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:6px}.field input,.field textarea{width:100%;border:1px solid #d4dee7;border-radius:13px;padding:12px;outline:0}.field textarea{min-height:105px}.actions{display:flex;gap:10px;margin-top:13px}.actions button{flex:1;border:0;border-radius:14px;padding:13px;font-weight:800}.wa{background:#08a66e;color:white}.digital{background:#eef2f7;color:#33475b}.qr{background:#111a2f;color:white;border-radius:17px;text-align:center;padding:17px;margin-top:22px;font-size:18px;font-weight:800}.footer{text-align:center;color:#718399;font-size:11px;line-height:1.6;padding:23px 5px 0}
+@media(max-width:600px){.wrap{padding:17px 13px 30px}.hero h1{font-size:21px}.section{padding:15px}.portions{grid-template-columns:1fr 1fr}.social{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}.actions{flex-direction:column}.energy-big strong{font-size:30px}}
 </style>
 </head>
-<body>
-<div class="container page">
-<header class="hero">
-  <div class="logo">BGN<br>RI</div>
-  <div class="gov">BADAN GIZI NASIONAL</div>
-  <div class="govsub">REPUBLIK INDONESIA</div>
-</header>
+<body><main class="wrap">
 
-<div class="notice">⚠️ &nbsp; <b>Menampilkan data menu terbaru.</b> Data menu dapat diperbarui oleh Admin SPPG.</div>
+<script>
+/* ===================== EDIT BAGIAN INI SAJA ===================== */
+const DATA={
+ logo:"logo-bgn.png",
+ instansi:"BADAN GIZI NASIONAL",
+ negara:"REPUBLIK INDONESIA",
+ judulPanduan:"PANDUAN GIZI SEIMBANG",
+ tanggalData:"2026-09-18",
+ tanggalHariIni:"2026-09-20",
+ sppg:"SPPG NGANJUK LOCERET CANDIREJO",
+ yayasan:"YAYASAN DARUL FALAH BARON",
+ menu:"Nasi Putih + Sempol Ayam Saus Bangkok + Tahu Kremes + Mix Vege + Buah Anggur",
+ tanggalMenu:"2026-09-18",
+ porsi:"PORSI BESAR",
+ waktuProduksi:"06:00 WIB",
+ waktuPengiriman:"07:30 WIB",
+ penerima:"2271 Siswa",
+ totalEnergi:"652.8 Kcal",
+ batasKonsumsi:"maksimal Pukul 10.45 WIB",
+ masaAman:"4 Jam setelah diproduksi",
+ gizi:{
+  "Porsi Besar": {energi:"652.8 Kcal",karbohidrat:"93.7 g",protein:"29.9 g",lemak:"18.9 g",serat:"1 g"},
+  "Porsi Kecil": {energi:"— Kcal",karbohidrat:"— g",protein:"— g",lemak:"— g",serat:"— g"},
+  "Porsi Bumil": {energi:"— Kcal",karbohidrat:"— g",protein:"— g",lemak:"— g",serat:"— g"},
+  "Porsi Busui": {energi:"— Kcal",karbohidrat:"— g",protein:"— g",lemak:"— g",serat:"— g"},
+  "Porsi Balita": {energi:"— Kcal",karbohidrat:"— g",protein:"— g",lemak:"— g",serat:"— g"}
+ },
+ foto:"foto-menu.jpg",
+ whatsapp:"",
+ instagram:"",
+ tiktok:"",
+ facebook:""
+};
+/* ================================================================ */
+function $(id){return document.getElementById(id)}
+function text(id,v){$(id).textContent=v}
+function init(){
+ $("logo").src=DATA.logo;
+ $("logo").onerror=()=>{$("logo").style.display="none"};
+ text("instansi",DATA.instansi);text("negara",DATA.negara);text("panduan",DATA.judulPanduan);
+ text("tanggalData",DATA.tanggalData);text("tanggalHariIni",DATA.tanggalHariIni);
+ text("sppg",DATA.sppg);text("porsi",DATA.porsi);text("menu",DATA.menu);text("tanggalMenu",DATA.tanggalMenu);
+ text("produksi",DATA.waktuProduksi);text("pengiriman",DATA.waktuPengiriman);text("penerima",DATA.penerima);text("total",DATA.totalEnergi);
+ text("batas",DATA.batasKonsumsi);text("masa",DATA.masaAman);
+ setPorsi(DATA.porsi);
+ $("foto").src=DATA.foto;$("foto").onload=()=>{$("foto").style.display="block";$("placeholder").style.display="none"};
+ $("wa").href=DATA.whatsapp||"#";$("ig").href=DATA.instagram||"#";$("tt").href=DATA.tiktok||"#";$("fb").href=DATA.facebook||"#";
+}
+function setPorsi(namaPorsi){
+ const g=DATA.gizi[namaPorsi]||DATA.gizi["Porsi Besar"];
+ text("porsi",namaPorsi.toUpperCase());
+ text("gPorsi",namaPorsi.toUpperCase());
+ text("energi",g.energi); text("karbo",g.karbohidrat);
+ text("protein",g.protein); text("lemak",g.lemak); text("serat",g.serat);
+ document.querySelectorAll(".portion").forEach(b=>b.classList.toggle("active",b.dataset.porsi===namaPorsi));
+}
+function kirimWA(){if(!DATA.whatsapp){alert("Masukkan nomor WhatsApp pada DATA.whatsapp terlebih dahulu.");return}let nomor=DATA.whatsapp.replace(/\D/g,"");let msg=encodeURIComponent("Pengaduan SPPG "+DATA.sppg+"\nNama: "+$("nama").value+"\nHP: "+$("hp").value+"\nKeluhan: "+$("keluhan").value);window.open("https://wa.me/"+nomor+"?text="+msg,"_blank")}
+document.addEventListener("DOMContentLoaded",init);
+</script>
 
-<section class="titleCard">
-  <div class="badges"><span class="badge">SPPG NGANJUK LOCERET CANDIREJO</span><span class="badge blue" id="portionBadge">PORSI BESAR</span></div>
-  <h1 id="menuTitle">Nasi Putih + Ayam Saus Bangkok + Tahu Kremes + Mix Vege + Buah</h1>
-  <div class="date">📅 Tanggal: <span id="dateText">20 September 2026</span></div>
-  <div class="zone">🌐 Waktu Pinda (Scan): <b>WIB</b> &nbsp; (Waktu Indonesia Barat)</div>
+<div class="center">
+<img id="logo" class="logo" alt="Logo">
+<div id="instansi" class="instansi"></div><div id="negara" class="negara"></div>
+</div>
+<div id="panduan" class="balance"></div>
+<div class="alert">⚠️ Menampilkan data menu terakhir (<b id="tanggalData"></b>). Menu untuk hari ini (<b id="tanggalHariIni"></b>) belum diperbarui oleh Admin SPPG.</div>
+
+<section class="hero">
+<div class="badges"><span id="sppg" class="badge"></span><span id="porsi" class="badge blue"></span></div>
+<h1 id="menu"></h1><div class="date">📅 Tanggal: <span id="tanggalMenu"></span></div>
+<div class="scan">🌐 Waktu Pindai (Scan): <b>WIB</b> (Waktu Indonesia Barat)</div>
 </section>
 
 <section class="section">
- <h2>🔎 LOGISTIK &amp; DISTRIBUSI</h2><div class="divider"></div>
- <div class="rows">
-  <div class="row"><span>🏭 Waktu Produksi:</span><b>06.00 WIB</b></div>
-  <div class="row"><span>🚚 Waktu Pengiriman:</span><b>07.30 WIB</b></div>
-  <div class="row blue"><span>👥 Penerima Manfaat:</span><b>— Siswa</b></div>
- </div>
- <div class="flow"><span>Produksi</span><i>→</i><span>Pengiriman</span><i>→</i><span>Konsumsi</span></div>
- <div class="energy-total"><small>TOTAL ENERGI MAKANAN</small><strong id="totalEnergy">— Kcal</strong></div>
+<h2>🔎 LOGISTIK &amp; DISTRIBUSI</h2>
+<div class="row"><span>🏭 Waktu Produksi:</span><span id="produksi" class="value"></span></div>
+<div class="row"><span>🚚 Waktu Pengiriman:</span><span id="pengiriman" class="value"></span></div>
+<div class="row blue"><span>👥 Penerima Manfaat:</span><span id="penerima" class="value"></span></div>
+<div class="flow"><b>Produksi</b><strong>→</strong><b>Pengiriman</b><strong>→</strong><b>Konsumsi</b></div>
+<div class="energy"><small>TOTAL ENERGI MAKANAN</small><strong id="total"></strong></div>
 </section>
 
-<section class="section safe">
- <h2>🛡️ KEAMANAN PANGAN</h2><div class="divider"></div>
- <div class="limit"><small>BATAS KONSUMSI AMAN</small><strong id="limitText">maksimal Pukul — WIB</strong></div>
- <div class="safe-row"><span>⌛ Masa Aman:</span><b id="safeHours">—</b></div>
- <div class="warning">⚠️ SEBAIKNYA SEGERA DIKONSUMSI</div>
- <div class="warning red">⚠️ DILARANG DIBAWA PULANG</div>
+<section class="section security">
+<h2>🛡️ KEAMANAN PANGAN</h2>
+<div class="safe"><small>BATAS KONSUMSI AMAN</small><strong id="batas"></strong></div>
+<div class="safe-row"><span>⌛ Masa Aman:</span><b id="masa"></b></div>
+<div class="warn">⚠️ SEBAIKNYA SEGERA DIKONSUMSI</div><div class="warn red">⚠️ DILARANG DIBAWA PULANG</div>
 </section>
 
-<div class="label">KANDUNGAN GIZI (<span id="portionLabel">PORSI BESAR</span>)</div>
-<section class="section" style="margin-bottom:10px">
- <div class="energy-box">
-  <div><small>⚡ INPUT ENERGI &amp; TERSIMPAN</small><div><strong id="energy">—</strong> <em>Kcal</em></div></div>
-  <div class="saved">🌱 &nbsp; ENERGI YANG TERSIMPAN</div>
- </div>
- <div class="nutrients">
-  <div class="nutrient carbs"><h3>KARBOHIDRAT</h3><strong id="carb">—</strong> <span>g</span></div>
-  <div class="nutrient protein"><h3>PROTEIN</h3><strong id="protein">—</strong> <span>g</span></div>
-  <div class="nutrient fat"><h3>LEMAK</h3><strong id="fat">—</strong> <span>g</span></div>
-  <div class="nutrient fiber"><h3>SERAT PANGAN</h3><strong id="fiber">—</strong> <span>g</span></div>
- </div>
- <div class="endnote">💬 Batas akhir konsumsi</div>
+<div class="nutri-title">KANDUNGAN GIZI (<span id="gPorsi"></span>)</div>
+<section style="padding:0;border:0;box-shadow:none" class="section">
+<div class="energy-big"><div><small>⚡ INPUT ENERGI &amp; TERSIMPAN</small><strong id="energi"></strong></div><div class="saved">🌱<br>ENERGI YANG TERSIMPAN</div></div>
+<div class="grid">
+<div class="box yellow"><h3>KARBOHIDRAT</h3><strong id="karbo"></strong></div>
+<div class="box pink"><h3>PROTEIN</h3><strong id="protein"></strong></div>
+<div class="box cyan"><h3>LEMAK</h3><strong id="lemak"></strong></div>
+<div class="box mint"><h3>SERAT PANGAN</h3><strong id="serat"></strong></div>
+</div><div class="end">💬 Batas akhir konsumsi</div>
 </section>
 
-<section class="portions">
- <div class="label" style="margin-top:0">PILIH PORSI UNTUK MELIHAT NILAI GIZI POSTER:</div>
- <div class="portion-tabs" id="portionTabs">
-  <button class="active" data-p="Besar">🍱 Porsi Besar</button>
-  <button data-p="Kecil">🍚 Porsi Kecil</button>
-  <button data-p="Bumil">🍼 Porsi Bumil</button>
-  <button data-p="Busui">🍼 Porsi Busui</button>
-  <button data-p="Balita">🍼 Porsi Balita</button>
- </div>
- <div class="poster">
-  <h3 id="posterTitle">Porsi Besar</h3>
-  <p id="posterText">Data nilai gizi sengaja dikosongkan agar dapat diisi oleh Admin SPPG.</p>
- </div>
-</section>
+<div class="portion-title">PILIH PORSI UNTUK MELIHAT NILAI GIZI POSTER:</div>
+<div class="portions">
+<button class="portion active" data-porsi="Porsi Besar">🍱 Porsi Besar</button>
+<button class="portion" data-porsi="Porsi Kecil">🥗 Porsi Kecil</button>
+<button class="portion" data-porsi="Porsi Bumil">🍼 Porsi Bumil</button>
+<button class="portion" data-porsi="Porsi Busui">🍼 Porsi Busui</button>
+<button class="portion" data-porsi="Porsi Balita">👶 Porsi Balita</button>
+</div>
 
-<section class="report">
- <div class="report-head">
-  <span class="report-pill">⚠️ LAYANAN TERBUKA</span>
-  <h2>Kotak Pengaduan SPPG</h2>
-  <p>Sampaikan keluhan, ketidaksesuaian rasa/porsi, atau masukan untuk <b>SPPG Nganjuk Loceret Candirejo</b>. Transparansi demi makanan bergizi berkualitas.</p>
- </div>
- <div class="report-body">
-  <div class="contact-title">KANAL KONTAK &amp; MEDIA SOSIAL RESMI SPPG</div>
-  <div class="contacts">
-   <div class="contact">💬<b>WhatsApp</b><small>Belum disetel</small></div>
-   <div class="contact">◎<b>Instagram</b><small>Belum ada</small></div>
-   <div class="contact">▣<b>TikTok</b><small>Belum ada</small></div>
-   <div class="contact">f<b>Facebook</b><small>Belum ada</small></div>
-  </div>
-  <h3 style="margin-top:22px">PILIH JENIS KENDALA / TOPIK:</h3>
-  <div class="topics">
-   <button class="topic active">🍲 Kualitas &amp; Rasa</button>
-   <button class="topic">🧼 Kebersihan &amp; Higienitas</button>
-   <button class="topic">⏱️ Waktu Distribusi</button>
-   <button class="topic">🍱 Porsi / Menu Tidak Sesuai</button>
-   <button class="topic">💡 Saran &amp; Aspirasi</button>
-  </div>
-  <div class="form-grid">
-   <div class="field"><label>Nama Anda (Opsional / Anonim):</label><input id="name" placeholder="Contoh: Budi (Wali Murid) / Siswa"></div>
-   <div class="field"><label>No. WhatsApp / HP (Opsional):</label><input id="phone" placeholder="Contoh: 081234567890"></div>
-   <div class="field full"><label>Uraian Keluhan, Kendala, atau Masukan: *</label><textarea id="message" placeholder="Jelaskan secara ringkas kendala menu makanan atau pelayanan SPPG hari ini..."></textarea></div>
-  </div>
-  <div class="actions">
-   <button class="wa" onclick="sendWhatsApp()">💬 Kirim via WhatsApp Langsung</button>
-   <button class="send" onclick="showToast('Form siap dihubungkan ke kotak digital.')">➤ Kirim ke Kotak Digital</button>
-  </div>
-  <p style="font-size:12px;color:#9aa8b7;text-align:center;margin-top:18px">Setiap laporan yang masuk dapat dicatat dalam rekapitulasi evaluasi SPPG demi peningkatan mutu gizi.</p>
- </div>
-</section>
+<div class="photo"><img id="foto" alt="Foto menu"><div id="placeholder" class="placeholder">📷<br><b>Tempat Foto Menu</b><br>Ganti file <b>foto-menu.jpg</b> dengan foto Anda.</div></div>
+
+<section class="contact">
+<div class="contact-top"><span class="pill">🛡️ LAYANAN TERBUKA</span><h2>Kontak &amp; Pengaduan SPPG</h2><p>Sampaikan keluhan, ketidaksesuaian rasa/porsi, atau masukan untuk SPPG. Transparansi demi makanan bergizi berkualitas.</p></div>
+<div class="contact-body">
+<h3>KANAL KONTAK &amp; MEDIA SOSIAL RESMI SPPG</h3>
+<div class="social"><a id="wa" href="#" target="_blank">💬<b>WhatsApp</b>Hubungi</a><a id="ig" href="#" target="_blank">◎<b>Instagram</b>Profil</a><a id="tt" href="#" target="_blank">◉<b>TikTok</b>Profil</a><a id="fb" href="#" target="_blank">f<b>Facebook</b>Profil</a></div>
+<div class="topics"><button class="topic active">🍲 Kualitas &amp; Rasa</button><button class="topic">🧼 Kebersihan &amp; Higienitas</button><button class="topic">⏱️ Waktu Distribusi</button><button class="topic">🍱 Porsi / Menu Tidak Sesuai</button><button class="topic">💡 Saran &amp; Aspirasi</button></div>
+<div class="formgrid"><div class="field"><label>Nama Anda (Opsional / Anonim):</label><input id="nama" placeholder="Contoh: Budi / Siswa"></div><div class="field"><label>No. WhatsApp / HP (Opsional):</label><input id="hp" placeholder="Contoh: 081234567890"></div></div>
+<div class="field"><label>Uraian Keluhan, Kendala, atau Masukan: *</label><textarea id="keluhan" placeholder="Jelaskan secara ringkas kendala menu makanan atau pelayanan SPPG hari ini..."></textarea></div>
+<div class="actions"><button class="wa" onclick="kirimWA()">💬 Kirim via WhatsApp Langsung</button><button class="digital" onclick="alert('Bagian ini bisa dihubungkan ke Google Form/database.')">➤ Kirim ke Kotak Digital</button></div>
+</div></section>
 
 <div class="qr">▦ &nbsp; Pindai QR Code Lain</div>
-<div class="footer">Menu MBG SPPG Nganjuk Loceret Candirejo — Yayasan Darul Falah Baron<br>Template website responsif untuk GitHub Pages</div>
-</div>
-<div class="toast" id="toast"></div>
-
+<div class="footer">SPPG Nganjuk Loceret Candirejo — <b>Yayasan Darul Falah Baron</b><br>Semua tulisan, foto, angka gizi, dan kontak dapat diedit di bagian <b>DATA</b> pada file HTML.</div>
+</main>
 <script>
-const DATA={
- Besar:{energy:"—",carb:"—",protein:"—",fat:"—",fiber:"—"},
- Kecil:{energy:"—",carb:"—",protein:"—",fat:"—",fiber:"—"},
- Bumil:{energy:"—",carb:"—",protein:"—",fat:"—",fiber:"—"},
- Busui:{energy:"—",carb:"—",protein:"—",fat:"—",fiber:"—"},
- Balita:{energy:"—",carb:"—",protein:"—",fat:"—",fiber:"—"}
-};
-
-function setPortion(p){
- const d=DATA[p];
- document.querySelectorAll("#portionTabs button").forEach(b=>b.classList.toggle("active",b.dataset.p===p));
- document.getElementById("portionBadge").textContent="PORSI "+p.toUpperCase();
- document.getElementById("portionLabel").textContent="PORSI "+p.toUpperCase();
- document.getElementById("posterTitle").textContent="Porsi "+p;
- document.getElementById("energy").textContent=d.energy;
- document.getElementById("totalEnergy").textContent=d.energy+" Kcal";
- document.getElementById("carb").textContent=d.carb;
- document.getElementById("protein").textContent=d.protein;
- document.getElementById("fat").textContent=d.fat;
- document.getElementById("fiber").textContent=d.fiber;
-}
-document.querySelectorAll("#portionTabs button").forEach(b=>b.addEventListener("click",()=>setPortion(b.dataset.p)));
-
-document.querySelectorAll(".topic").forEach(b=>b.addEventListener("click",()=>{
- document.querySelectorAll(".topic").forEach(x=>x.classList.remove("active"));b.classList.add("active");
-}));
-
-function sendWhatsApp(){
- const msg=document.getElementById("message").value.trim();
- if(!msg){showToast("Isi uraian keluhan atau masukan terlebih dahulu.");return}
- const name=document.getElementById("name").value.trim();
- const phone=document.getElementById("phone").value.trim();
- const text=`Pengaduan SPPG Nganjuk Loceret Candirejo%0A%0ANama: ${encodeURIComponent(name||"Anonim")}%0ANo. HP: ${encodeURIComponent(phone||"-")}%0A%0AUraian:%0A${encodeURIComponent(msg)}`;
- // Ganti 628xxxxxxxxxx dengan nomor WhatsApp resmi SPPG.
- window.open("https://wa.me/6280000000000?text="+text,"_blank");
-}
-function showToast(t){
- const el=document.getElementById("toast");el.textContent=t;el.style.display="block";
- setTimeout(()=>el.style.display="none",2500);
-}
-setPortion("Besar");
+document.querySelectorAll(".portion").forEach(b=>b.onclick=()=>setPorsi(b.dataset.porsi));
+document.querySelectorAll(".topic").forEach(b=>b.onclick=()=>{document.querySelectorAll(".topic").forEach(x=>x.classList.remove("active"));b.classList.add("active")});
 </script>
-</body>
-</html>
+</body></html>
